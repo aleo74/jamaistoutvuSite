@@ -1,106 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script defer src="https://umami.aldgram-solutions.fr/script.js" data-website-id="5cb6db6f-9bb1-4489-99be-181a1f7b0376"></script>
-  <title>Site en construction — jamaistoutvu.com</title>
-  <style>
-    :root {
-      --bg1: #0f172a; /* slate-900 */
-      --bg2: #1e293b; /* slate-800 */
-      --accent: #22d3ee; /* cyan-400 */
-      --accent2: #a78bfa; /* violet-400 */
-      --text: #e2e8f0; /* slate-200 */
-      --muted: #94a3b8; /* slate-400 */
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(1200px 800px at 70% -20%, rgba(167,139,250,.25), transparent 60%),
-                  radial-gradient(1000px 600px at -10% 120%, rgba(34,211,238,.18), transparent 60%),
-                  linear-gradient(180deg, var(--bg1), var(--bg2));
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-    }
-    .card {
-      width: min(90vw, 760px);
-      padding: 28px;
-      border-radius: 18px;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(148, 163, 184, .18);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      text-align: center;
-      animation: float 6s ease-in-out infinite;
-    }
-    @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-6px) } }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JamaisToutVu — Les sorties enfants & familles en Ariège</title>
+    <meta
+      name="description"
+      content="Ateliers, spectacles, loisirs et sorties famille : JamaisToutVu rassemble l’agenda enfants & familles de l’Ariège dans une expérience claire et rapide."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="carte" class="hero-map container reveal" aria-labelledby="hero-map-title">
+        <div class="hero-brandbar">
+          <div class="brand-mark">
+            <img
+              class="brand-logo"
+              src="Jamais tout vu png.png"
+              alt="Logo Jamais Tout Vu Ariège"
+              width="172"
+              height="172"
+            />
+            <div>
+              <p class="brand-title">JamaisToutVu</p>
+              <p class="brand-tagline">L’agenda local des sorties enfants &amp; familles en Ariège.</p>
+            </div>
+          </div>
+          <a
+            class="btn btn-primary"
+            href="https://webapp.jamaistoutvu.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Ouvrir l'application JamaisToutVu"
+            >Ouvrir l’application</a
+          >
+        </div>
 
-    .logo {
-      width: 86px; height: 86px; margin: 0 auto 14px;
-      display: grid; place-items: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(34,211,238,.25), rgba(167,139,250,.25));
-      border: 1px solid rgba(148,163,184,.25);
-    }
-    .logo svg { width: 46px; height: 46px; }
+        <div class="hero-map-grid">
+          <div class="hero-map-content">
+            <!--
+              Mise à jour du titre et du sous‑titre pour une formulation plus engageante.
+              La nouvelle phrase met l’accent sur l’exhaustivité des événements en Ariège
+              et l’instantanéité de l’accès, conformément aux conseils de conception de
+              sections héros (planifier l’espace pour le texte et rester centré sur le
+              message【442148233249193†L50-L57】【442148233249193†L62-L69】).
+            -->
+            <h1 id="hero-map-title">
+              <span class="hero-title-marquee"
+                >Toutes les sorties <span class="accent-word">enfants &amp; familles</span> en Ariège.</span
+              >
+            </h1>
+            <p class="hero-map-subtitle">
+              L’agenda local pensé pour les parents : ateliers, spectacles,
+              animations, loisirs et activités à partager en famille.
+            </p>
 
-    h1 {
-      margin: 8px 0 6px;
-      font-size: clamp(26px, 3.2vw, 36px);
-      line-height: 1.2;
-      letter-spacing: .2px;
-    }
-    p { margin: 8px 0; color: var(--muted); font-size: clamp(14px, 2.2vw, 16px); }
+            <div class="map-chips" aria-label="Types d'événements">
+              <span class="chip" aria-label="Ateliers">🎨 Ateliers</span>
+              <span class="chip" aria-label="Spectacles">🎭 Spectacles</span>
+              <span class="chip" aria-label="Loisirs">🌿 Loisirs</span>
+              <span class="chip" aria-label="Famille">👨‍👩‍👧‍👦 Famille</span>
+            </div>
 
-    .bar {
-      height: 10px; width: 100%; margin: 18px 0 8px;
-      background: rgba(148,163,184,.18);
-      border: 1px solid rgba(148,163,184,.22);
-      border-radius: 999px; overflow: hidden; position: relative;
-    }
-    .bar > span {
-      position: absolute; inset: 0 0 0 auto; width: 35%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      animation: load 2.2s ease-in-out infinite;
-    }
-    @keyframes load {
-      0%{ left:-40%; width: 25% }
-      50%{ left:30%; width: 40% }
-      100%{ left:105%; width: 20% }
-    }
+            <div class="map-actions">
+              <!--
+                Le libellé du bouton principal a été ajusté pour encourager la
+                découverte de l’application. Les bonnes pratiques recommandent
+                d’avoir une action claire et unique dans la section héro【442148233249193†L109-L117】.
+              -->
+              <a
+                class="btn btn-primary"
+                href="https://webapp.jamaistoutvu.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Découvrir l'application JamaisToutVu"
+                >Découvrir l’application</a
+              >
+              <a
+                class="btn map-btn-secondary map-open-trigger"
+                href="#map-root"
+                aria-label="Voir la carte interactive"
+                >Carte</a
+              >
+            </div>
 
-    .links { display:flex; gap:12px; justify-content:center; margin-top:16px; flex-wrap: wrap; }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 14px; border-radius: 12px; text-decoration:none; color: var(--text);
-      background: rgba(148,163,184,.12); border: 1px solid rgba(148,163,184,.25);
-    }
-    .btn:hover { border-color: rgba(34,211,238,.45) }
-    footer { margin-top: 16px; font-size: 12px; color: #93a3b5; opacity:.9 }
-  </style>
-</head>
-<body>
-  <main class="card" role="main" aria-label="Site en construction">
-    <div class="logo" aria-hidden="true">
-      <!-- petit pictogramme grue -->
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path stroke-width="1.6" d="M3 21h18M6 21V8m0 0h4m-4 0 7-5 4 3h4M10 8v13m6-10v10M8 13h4" />
-        <circle cx="20" cy="9" r="1.6" />
-      </svg>
+            <p class="trust-row">Ariège d’abord · France ensuite</p>
+          </div>
+
+          <div class="map-composition">
+            <div class="map-stage map-visual">
+              <div
+                id="map-root"
+                class="map-root"
+                role="img"
+                aria-label="Carte interactive de France avec départements"
+                aria-live="polite"
+              >
+                Chargement de la carte…
+              </div>
+              <p id="ariege-tag" class="ariege-tag" aria-hidden="true">Ariège (09)</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="map-hint">Cliquez sur l’Ariège (09)</p>
+      </section>
+
+      <section class="container reveal" aria-labelledby="why-title">
+        <h2 id="why-title" class="section-title">Pourquoi JamaisToutVu ?</h2>
+        <p class="section-subtitle">Un seul endroit pour toutes les idées de sorties avec les enfants.</p>
+
+        <div class="cards">
+          <!--
+            Les cartes de l’argumentaire ont été repensées pour adopter un dégradé aux
+            couleurs de la marque et des messages plus descriptifs. Chaque article
+            porte désormais la classe `card-gradient`, qui sera stylisée dans la
+            feuille de styles afin d’utiliser un dégradé entre le vert et le cuivre
+            de l’identité graphique. Les icônes existantes ont été conservées.
+          -->
+          <article class="card card-gradient reveal reveal-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h16M12 4v16"/></svg>
+            </span>
+            <h3>Simple &amp; pratique</h3>
+            <p>Trouvez rapidement une activité adaptée à l’âge de vos enfants.</p>
+          </article>
+          <article class="card card-gradient reveal reveal-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 16l6-6 4 4 6-7"/></svg>
+            </span>
+            <h3>100% familles en Ariège</h3>
+            <p>Une sélection locale pensée pour les enfants et leurs parents.</p>
+          </article>
+          <article class="card card-gradient reveal reveal-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="7" y="3" width="10" height="18" rx="2"/></svg>
+            </span>
+            <h3>Sortir sans stress</h3>
+            <p>Votre agenda famille toujours à portée de main, partout en Ariège.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ariege-title"
+        aria-describedby="ariege-desc"
+      >
+        <button id="modal-close" class="modal-close" type="button" aria-label="Fermer la popup">
+          ×
+        </button>
+        <h3 id="ariege-title">Ariège — sorties enfants &amp; familles</h3>
+        <p id="ariege-desc">
+          Découvrez les événements dédiés aux enfants et aux familles en Ariège au même endroit grâce à JamaisToutVu.
+          Ateliers, spectacles, animations et activités locales accessibles en quelques clics.
+        </p>
+        <a
+          class="btn btn-primary"
+          href="https://webapp.jamaistoutvu.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Accéder à l'application JamaisToutVu"
+          >Accéder à l’application</a
+        >
+      </div>
     </div>
-    <h1>On construit quelque chose de chouette ✨</h1>
-    <p>Le site <strong>jamaistoutvu.com</strong> est en cours de préparation. Revenez très vite !</p>
-    <div class="bar" aria-hidden="true"><span></span></div>
-    <div class="links">
-      <a class="btn" href="mailto:ariege@jamaistoutvu.com" aria-label="Nous contacter par email">📬 Nous contacter</a>
-      <a class="btn" href="#" onclick="navigator.clipboard.writeText(location.origin);this.textContent='URL copiée ✅';return false;">🔗 Copier l’URL</a>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div class="mobile-sheet-overlay" id="mobile-sheet-overlay" hidden></div>
+    <div
+      class="mobile-sheet"
+      id="mobile-map-sheet"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-sheet-title"
+    >
+      <div class="mobile-sheet-handle" aria-hidden="true"></div>
+      <div class="mobile-sheet-header">
+        <h3 id="mobile-sheet-title">Carte</h3>
+        <button
+          id="mobile-sheet-close"
+          class="mobile-sheet-close"
+          type="button"
+          aria-label="Fermer le panneau carte"
+        >
+          ×
+        </button>
+      </div>
+      <div id="mobile-sheet-content" class="mobile-sheet-content"></div>
     </div>
-    <footer>© <span id="y"></span> jamaistoutvu.com — Tous droits réservés.</footer>
-  </main>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-</body>
+
+    <div class="mobile-sticky-cta" aria-hidden="true">
+      <a
+        class="btn btn-primary"
+        href="https://webapp.jamaistoutvu.com/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Découvrir l'application JamaisToutVu"
+        >Découvrir l’application</a
+      >
+      <button class="btn map-btn-secondary map-open-trigger" type="button" aria-label="Ouvrir la carte">
+        Carte
+      </button>
+    </div>
+
+    <footer class="container footer">
+      © <span id="year"></span> JamaisToutVu ·
+      <a href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Application</a>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
