@@ -3,101 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JamaisToutVu — Les sorties enfants & familles en Ariège</title>
+    <title>JamaisToutVu — Idées de sorties gratuites en famille en Ariège</title>
     <meta
       name="description"
-      content="Ateliers, spectacles, loisirs et sorties famille : JamaisToutVu rassemble l’agenda enfants & familles de l’Ariège dans une expérience claire et rapide."
+      content="Découvrez des idées de sortie gratuite Ariège pour les familles : balades, activités enfants, événements locaux et bons plans avec JamaisToutVu."
     />
-	<script defer src="https://umami.aldgram-solutions.fr/script.js" data-website-id="5cb6db6f-9bb1-4489-99be-181a1f7b0376"></script>
+    <meta property="og:title" content="JamaisToutVu — Idées de sorties gratuites en famille en Ariège" />
+    <meta property="og:description" content="La plateforme locale pour trouver des sorties gratuites en famille en Ariège." />
+    <meta property="og:image" content="https://jamaistoutvu.com/images/og-default.png" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://jamaistoutvu.com/" />
+    <!-- Slots images : remplacez les fichiers dans /images en gardant exactement les mêmes noms. -->
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://jamaistoutvu.com/"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <main>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="site-logo" href="/">JamaisToutVu</a>
+        <nav class="site-nav" aria-label="Menu principal">
+          <a href="/">Accueil</a>
+          <a href="/blog/">Blog</a>
+          <a href="/a-propos/">Qui sommes-nous</a>
+          <a href="/activites-enfants-ariege/">Activités</a>
+          <a href="/evenements-enfants-ariege/">Événements</a>
+          <a href="/contactez-nous/">Contactez-nous</a>
+          <a class="site-nav-cta" href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Ouvrir l’application</a>
+        </nav>
+      </div>
+    </header>
+<main>
       <section id="carte" class="hero-map container reveal" aria-labelledby="hero-map-title">
         <div class="hero-brandbar">
           <div class="brand-mark">
-            <img
-              class="brand-logo"
-              src="Jamais tout vu png.png"
-              alt="Logo Jamais Tout Vu Ariège"
-              width="172"
-              height="172"
-            />
+            <img class="brand-logo" src="/images/logo-jamaistoutvu.png" alt="Logo Jamais Tout Vu Ariège" width="172" height="172" />
             <div>
               <p class="brand-title">JamaisToutVu</p>
-              <p class="brand-tagline">L’agenda local des sorties enfants &amp; familles en Ariège.</p>
+              <p class="brand-tagline">La plateforme locale des sorties enfants &amp; familles en Ariège.</p>
             </div>
           </div>
-          <a
-            class="btn btn-primary"
-            href="https://webapp.jamaistoutvu.com/"
-            target="_blank"
-            rel="noopener"
-            aria-label="Ouvrir l'application JamaisToutVu"
-            >Ouvrir l’application</a
-          >
+          <a class="btn btn-primary" href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Explorer les sorties</a>
         </div>
 
         <div class="hero-map-grid">
           <div class="hero-map-content">
-            <!--
-              Mise à jour du titre et du sous‑titre pour une formulation plus engageante.
-              La nouvelle phrase met l’accent sur l’exhaustivité des événements en Ariège
-              et l’instantanéité de l’accès, conformément aux conseils de conception de
-              sections héros (planifier l’espace pour le texte et rester centré sur le
-              message【442148233249193†L50-L57】【442148233249193†L62-L69】).
-            -->
-            <h1 id="hero-map-title">
-              <span class="hero-title-marquee"
-                >Toutes les sorties <span class="accent-word">enfants &amp; familles</span> en Ariège.</span
-              >
-            </h1>
+            <h1 id="hero-map-title">Idées de sorties gratuites en famille en Ariège</h1>
             <p class="hero-map-subtitle">
-              L’agenda local pensé pour les parents : ateliers, spectacles,
-              animations, loisirs et activités à partager en famille.
+              Explorez des lieux accessibles, locaux et gratuits pour organiser vos sorties avec enfants partout en Ariège.
             </p>
 
-            <div class="map-chips" aria-label="Types d'événements">
-              <span class="chip" aria-label="Ateliers">🎨 Ateliers</span>
-              <span class="chip" aria-label="Spectacles">🎭 Spectacles</span>
-              <span class="chip" aria-label="Loisirs">🌿 Loisirs</span>
-              <span class="chip" aria-label="Famille">👨‍👩‍👧‍👦 Famille</span>
+            <div class="map-chips map-chips-compact" aria-label="Types de sorties">
+              <span class="chip" title="Aires de jeux">🎠 Jeux</span>
+              <span class="chip" title="Activités enfants">🎨 Activités</span>
+              <span class="chip" title="Événements familles">🎭 Événements</span>
+              <span class="chip" title="Balades & nature">🥾 Nature</span>
             </div>
 
             <div class="map-actions">
-              <!--
-                Le libellé du bouton principal a été ajusté pour encourager la
-                découverte de l’application. Les bonnes pratiques recommandent
-                d’avoir une action claire et unique dans la section héro【442148233249193†L109-L117】.
-              -->
-              <a
-                class="btn btn-primary"
-                href="https://webapp.jamaistoutvu.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Découvrir l'application JamaisToutVu"
-                >Découvrir l’application</a
-              >
-              <a
-                class="btn map-btn-secondary map-open-trigger"
-                href="#map-root"
-                aria-label="Voir la carte interactive"
-                >Carte</a
-              >
+              <a class="btn btn-primary" href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Explorer les sorties</a>
             </div>
 
-            <p class="trust-row">Ariège d’abord · France ensuite</p>
+            <p class="trust-row">Gratuit · local · pensé pour les familles</p>
           </div>
 
           <div class="map-composition">
             <div class="map-stage map-visual">
-              <div
-                id="map-root"
-                class="map-root"
-                role="img"
-                aria-label="Carte interactive de France avec départements"
-                aria-live="polite"
-              >
+              <div id="map-root" class="map-root" role="img" aria-label="Carte interactive de France avec départements" aria-live="polite">
                 Chargement de la carte…
               </div>
               <p id="ariege-tag" class="ariege-tag" aria-hidden="true">Ariège (09)</p>
@@ -108,115 +92,108 @@
         <p class="map-hint">Cliquez sur l’Ariège (09)</p>
       </section>
 
-      <section class="container reveal" aria-labelledby="why-title">
-        <h2 id="why-title" class="section-title">Pourquoi JamaisToutVu ?</h2>
-        <p class="section-subtitle">Un seul endroit pour toutes les idées de sorties avec les enfants.</p>
-
-        <div class="cards">
-          <!--
-            Les cartes de l’argumentaire ont été repensées pour adopter un dégradé aux
-            couleurs de la marque et des messages plus descriptifs. Chaque article
-            porte désormais la classe `card-gradient`, qui sera stylisée dans la
-            feuille de styles afin d’utiliser un dégradé entre le vert et le cuivre
-            de l’identité graphique. Les icônes existantes ont été conservées.
-          -->
-          <article class="card card-gradient reveal reveal-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h16M12 4v16"/></svg>
-            </span>
-            <h3>Simple &amp; pratique</h3>
-            <p>Trouvez rapidement une activité adaptée à l’âge de vos enfants.</p>
+      <section class="container reveal" aria-labelledby="fonctionnement-title">
+        <h2 id="fonctionnement-title" class="section-title">Comment ça fonctionne</h2>
+        <p class="section-subtitle">Trouvez une idée de sortie en 3 étapes simples.</p>
+        <div class="cards cards-steps">
+          <article class="card card-gradient reveal reveal-card fun-step">
+            <h3>🧭 1. Carte ou agenda</h3>
+            <p>Cherchez sur la carte pour une activité ou dans l’agenda pour trouver un événement.</p>
           </article>
-          <article class="card card-gradient reveal reveal-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 16l6-6 4 4 6-7"/></svg>
-            </span>
-            <h3>100% familles en Ariège</h3>
-            <p>Une sélection locale pensée pour les enfants et leurs parents.</p>
+          <article class="card card-gradient reveal reveal-card fun-step">
+            <h3>✨ 2. Consultez la fiche</h3>
+            <p>Accédez aux infos pratiques : horaires, prix, adresse, équipements et avis.</p>
           </article>
-          <article class="card card-gradient reveal reveal-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false"><rect x="7" y="3" width="10" height="18" rx="2"/></svg>
-            </span>
-            <h3>Sortir sans stress</h3>
-            <p>Votre agenda famille toujours à portée de main, partout en Ariège.</p>
+          <article class="card card-gradient reveal reveal-card fun-step">
+            <h3>🎉 3. Profitez en famille</h3>
+            <p>Planifiez votre sortie et enregistrez vos lieux favoris depuis l’application.</p>
           </article>
         </div>
+      </section>
+
+      <section class="container reveal" aria-labelledby="categories-title">
+        <h2 id="categories-title" class="section-title">Catégories de sorties</h2>
+        <div class="grid-links grid-3cols">
+          <a class="info-card" href="/activites-enfants-ariege/">Activités familles</a>
+          <a class="info-card" href="/evenements-enfants-ariege/">Événements familles</a>
+          <a class="info-card" href="/blog/">Guides &amp; inspirations</a>
+        </div>
+      </section>
+
+      <section class="container reveal" aria-labelledby="top-sorties-title">
+        <h2 id="top-sorties-title" class="section-title">Idées de sorties en Ariège</h2>
+        <p class="section-subtitle">Pas d’inspiration ? Lancez une suggestion surprise 🎲</p>
+        <div class="random-pick-wrap">
+          <button class="random-pick-btn" id="random-pick-btn" type="button">Me surprendre</button>
+        </div>
+        <div id="outing-grid" class="grid-links grid-3cols" aria-live="polite"></div>
+      </section>
+
+      <section class="container reveal testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title" class="section-title">Avis des familles ariégeoises</h2>
+        <div class="grid-links grid-3cols">
+          <article class="info-card info-card-detail">
+            <p>“Ce site est vraiment très bien fait. C’est ce qui manquait à nous ariégeois en quête de découvertes et d’activités.”</p>
+            <strong class="review-author">— Chantal R. <span class="review-stars" aria-label="5 étoiles sur 5">★★★★★</span></strong>
+          </article>
+          <article class="info-card info-card-detail">
+            <p>“Application très pratique pour découvrir l’Ariège et ses activités. Les infos sont claires, utiles et faciles à trouver.”</p>
+            <strong class="review-author">— Tomás M. <span class="review-stars" aria-label="5 étoiles sur 5">★★★★★</span></strong>
+          </article>
+          <article class="info-card info-card-detail">
+            <p>“Enfin un endroit où les informations sont centralisées pour des idées activité ! Top.”</p>
+            <strong class="review-author">— Marion R. <span class="review-stars" aria-label="5 étoiles sur 5">★★★★★</span></strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="container reveal about-highlight" aria-labelledby="about-highlight-title">
+        <h2 id="about-highlight-title" class="section-title">Qui sommes-nous ?</h2>
+        <p class="section-subtitle">Découvrez l’histoire de Louis et Alex, fondateurs de JamaisToutVu, et notre mission locale.</p>
+        <a class="btn btn-primary" href="/a-propos/">Découvrir notre histoire</a>
       </section>
     </main>
 
     <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
-      <div
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="ariege-title"
-        aria-describedby="ariege-desc"
-      >
-        <button id="modal-close" class="modal-close" type="button" aria-label="Fermer la popup">
-          ×
-        </button>
-        <h3 id="ariege-title">Ariège — sorties enfants &amp; familles</h3>
-        <p id="ariege-desc">
-          Découvrez les événements dédiés aux enfants et aux familles en Ariège au même endroit grâce à JamaisToutVu.
-          Ateliers, spectacles, animations et activités locales accessibles en quelques clics.
-        </p>
-        <a
-          class="btn btn-primary"
-          href="https://webapp.jamaistoutvu.com/"
-          target="_blank"
-          rel="noopener"
-          aria-label="Accéder à l'application JamaisToutVu"
-          >Accéder à l’application</a
-        >
+      <div role="dialog" aria-modal="true" aria-labelledby="ariege-title" aria-describedby="ariege-desc" class="modal">
+        <button id="modal-close" class="modal-close" type="button" aria-label="Fermer la popup">×</button>
+        <h2 id="ariege-title">Ariège — sorties enfants &amp; familles</h2>
+        <p id="ariege-desc">Découvrez les sorties dédiées aux familles en Ariège dans l’application JamaisToutVu.</p>
+        <a class="btn btn-primary" href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Accéder à l’application</a>
       </div>
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <div class="mobile-sheet-overlay" id="mobile-sheet-overlay" hidden></div>
-    <div
-      class="mobile-sheet"
-      id="mobile-map-sheet"
-      hidden
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="mobile-sheet-title"
-    >
+    <div class="mobile-sheet" id="mobile-map-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="mobile-sheet-title">
       <div class="mobile-sheet-handle" aria-hidden="true"></div>
       <div class="mobile-sheet-header">
-        <h3 id="mobile-sheet-title">Carte</h3>
-        <button
-          id="mobile-sheet-close"
-          class="mobile-sheet-close"
-          type="button"
-          aria-label="Fermer le panneau carte"
-        >
-          ×
-        </button>
+        <h2 id="mobile-sheet-title">Carte</h2>
+        <button id="mobile-sheet-close" class="mobile-sheet-close" type="button" aria-label="Fermer le panneau carte">×</button>
       </div>
       <div id="mobile-sheet-content" class="mobile-sheet-content"></div>
     </div>
 
     <div class="mobile-sticky-cta" aria-hidden="true">
-      <a
-        class="btn btn-primary"
-        href="https://webapp.jamaistoutvu.com/"
-        target="_blank"
-        rel="noopener"
-        aria-label="Découvrir l'application JamaisToutVu"
-        >Découvrir l’application</a
-      >
-      <button class="btn map-btn-secondary map-open-trigger" type="button" aria-label="Ouvrir la carte">
-        Carte
-      </button>
+      <a class="btn btn-primary" href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Explorer</a>
     </div>
 
     <footer class="container footer">
-      © <span id="year"></span> JamaisToutVu ·
-      <a href="https://webapp.jamaistoutvu.com/" target="_blank" rel="noopener">Application</a>
+      <nav class="footer-nav" aria-label="Navigation secondaire">
+        <a href="/">Accueil</a>
+        <a href="/activites-enfants-ariege/">Activités</a>
+        <a href="/evenements-enfants-ariege/">Événements</a>
+        <a href="/blog/">Blog</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contactez-nous/">Contact</a>
+      </nav>
+      <p>JamaisToutVu · <a href="mailto:ariege@jamaistoutvu.com">ariege@jamaistoutvu.com</a> · 07 70 18 23 68</p>
+      <p>© <span id="year"></span> JamaisToutVu</p>
     </footer>
 
     <script src="app.js" defer></script>
+  
+    <script src="mobile-experience.js" defer></script>
   </body>
 </html>

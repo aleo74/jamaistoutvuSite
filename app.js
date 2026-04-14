@@ -17,6 +17,46 @@ const mapOpenTriggers = document.querySelectorAll('.map-open-trigger');
 const mobileStickyCta = document.querySelector('.mobile-sticky-cta');
 const heroSection = document.querySelector('.hero-map');
 
+const OUTING_POOL = [
+  {
+    name: 'Pont du Diable : balade famille gratuite',
+    href: '/blog/pont-du-diable-montoulieu-balade-famille.html',
+    image: '/images/pont-diable.webp',
+    alt: 'Pont du Diable',
+    description: 'Accès libre, conseils parking et idée de boucle courte avec enfants.',
+  },
+  {
+    name: 'Aire de jeux Mercus-Garrabet : sortie famille',
+    href: '/blog/aire-de-jeux-mercus-garrabet-famille.html',
+    image: '/images/aire-jeux-mercus.webp',
+    alt: 'Aire de jeux Mercus-Garrabet',
+    description: 'Jeux, tyrolienne et city stade pour une pause famille rapide et gratuite.',
+  },
+  {
+    name: 'Fontaine de Fontestorbe : sortie famille',
+    href: '/blog/fontaine-de-fontestorbe-sortie-famille.html',
+    image: '/images/fontestorbe.webp',
+    alt: 'Fontaine de Fontestorbe',
+    description: 'Une source spectaculaire et facile d’accès à observer avec les enfants.',
+  },
+  {
+    name: 'Plaine des sports d\'Auzat : sortie famille',
+    href: '/blog/plaine-des-sports-auzat-sortie-famille.html',
+    image: '/images/plaine-sports-auzat.webp',
+    alt: 'Plaine des sports d\'Auzat',
+    description: 'Aire de jeux, skatepark et bike park pour se dépenser en famille.',
+  },
+  {
+    name: 'Château de Miglos : visite libre en Ariège',
+    href: '/blog/chateau-de-miglos-visite-libre-famille.html',
+    image: '/images/chateau-miglos.webp',
+    alt: 'Château de Miglos',
+    description: 'Un site médiéval à explorer gratuitement avec panorama sur la vallée.',
+  },
+];
+
+const OUTING_STORAGE_KEY = 'jtv-home-outings-last';
+
 const isMobileViewport = () => window.innerWidth <= 768;
 
 let mapOriginalParent = null;
@@ -306,6 +346,61 @@ const initReveal = () => {
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 };
 
+
+const shuffleArray = (items) => {
+  const array = [...items];
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const createOutingCardMarkup = (outing) => `
+  <article class="info-card info-card-detail blog-card outing-card" data-outing-name="${outing.name}">
+    <img class="article-image-slot" src="${outing.image}" alt="${outing.alt}" loading="lazy" decoding="async" />
+    <h3><a href="${outing.href}">${outing.name}</a></h3>
+    <p>${outing.description}</p>
+  </article>
+`;
+
+const initHomeOutings = () => {
+  const outingGrid = document.getElementById('outing-grid');
+  if (!outingGrid) return;
+
+  const previousSignature = window.localStorage.getItem(OUTING_STORAGE_KEY) || '';
+  let attempts = 0;
+  let selected = [];
+
+  while (attempts < 8) {
+    selected = shuffleArray(OUTING_POOL).slice(0, 3);
+    const signature = selected.map((item) => item.href).sort().join('|');
+    if (signature !== previousSignature || OUTING_POOL.length <= 3) break;
+    attempts += 1;
+  }
+
+  outingGrid.innerHTML = selected.map(createOutingCardMarkup).join('');
+  const newSignature = selected.map((item) => item.href).sort().join('|');
+  window.localStorage.setItem(OUTING_STORAGE_KEY, newSignature);
+};
+
+const initRandomOutingPicker = () => {
+  const randomButton = document.getElementById('random-pick-btn');
+  const outingCards = [...document.querySelectorAll('.outing-card')];
+  if (!randomButton || !outingCards.length) return;
+
+  randomButton.addEventListener('click', () => {
+    outingCards.forEach((card) => card.classList.remove('is-spotlight'));
+    const randomCard = outingCards[Math.floor(Math.random() * outingCards.length)];
+    randomCard.classList.add('is-spotlight');
+
+    const outingName = randomCard.dataset.outingName || 'sortie famille';
+    toast.textContent = `Suggestion surprise : ${outingName}`;
+    toast.classList.add('show');
+    window.setTimeout(() => toast.classList.remove('show'), 2200);
+  });
+};
+
 const initModalEvents = () => {
   modalCloseButton.addEventListener('click', closeModal);
 
@@ -324,3 +419,5 @@ initReveal();
 injectMapSvg();
 initMobileMapSheet();
 initStickyMobileCta();
+initHomeOutings();
+initRandomOutingPicker();
